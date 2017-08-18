@@ -102,7 +102,12 @@ function backup {
 
 function cs {
 
-    cd "${1-$H2}"
+    dir="${1-$H2}"
+    if ! [ "$dir" ]
+    then dir=~
+    fi
+
+    cd "$dir"
     ls
 
 }
