@@ -25,7 +25,7 @@ export GIT_EDITOR=nano
 export MSU=marinellis@hx10.pa.msu.edu:/work/raida/marinellis
 export UMD=samm@pa-pub.umd.edu:/data/scratch/userspace/samm
 
-for command in fgrep ls
+for command in grep fgrep ls
 do alias "$command=$command --color=auto"
 done
 
@@ -45,7 +45,7 @@ alias "rm=rm -i"
 
 alias "time=/usr/bin/time -v"
 
-alias "make=make -j$(cat /proc/cpuinfo | fgrep processor | wc -l)"
+alias "make=make -j"
 
 alias "root=root -l"
 
