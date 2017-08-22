@@ -45,7 +45,7 @@ alias "rm=rm -i"
 
 alias "time=/usr/bin/time -v"
 
-alias "make=make -j"
+alias "make=make -j$(fgrep processor /proc/cpuinfo | wc -l)"
 
 alias "root=root -l"
 
