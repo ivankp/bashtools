@@ -156,7 +156,9 @@ function li {
 
     name="$1"
 
-    for tuple in "marinellis hx10 .pa.msu.edu" "samm pa-pub .umd.edu"
+    for tuple in "marinellis hx10    .pa.msu.edu" \
+                 "samm       pa-pub  .umd.edu"    \
+                 "samm       seqouia .umd.edu"
     do
         arr=($tuple)
         if [ "$name" == ${arr[1]} ]
