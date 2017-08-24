@@ -53,35 +53,10 @@ alias "i3lock=i3lock -c 000000"
 
 alias "deepin-screenshot=deepin-screenshot -d 2 -f -s"
 
+alias "untar=tar -xvf"
+
 function err {
     echo "$@" 1>&2
-}
-
-function untar {
-
-    for file in "$@"
-    do
-        
-        success=false
-        for pair in "g z" "x J"
-        do
-            arr=($pair)
-            if [[ $file == *.tar.${arr[0]}z ]]
-            then
-                tar -x${arr[1]}vf $file
-                success=true
-                break
-            fi
-        done
-
-        if ! $success
-        then
-            err "Unknown file suffix: '$file'."
-            return 1
-        fi
-
-    done
-    
 }
 
 function backup {
