@@ -161,3 +161,12 @@ function pdf {
     done
 
 }
+
+function prepend {
+
+    var="$1"
+    paths="$2"
+    
+    export "$var=$paths:${!var}"
+
+}
