@@ -154,7 +154,7 @@ function pdf {
     do
         for i in {1..2}
         do
-            if ! pdflatex -shell-escape -halt-on-error $file
+            if ! pdflatex -shell-escape -halt-on-error "$file"
             then return 1
             fi
         done
@@ -165,8 +165,13 @@ function pdf {
 function prepend {
 
     var="$1"
-    paths="$2"
+    shift
     
-    export "$var=$paths:${!var}"
+    prefix=
+    for file in "$@"
+    do prefix+="$file:"
+    done
+    
+    export "$var=$prefix${!var}"
 
 }
