@@ -18,7 +18,9 @@
 
 # Address correspondence about this program to samuelmarinelli@gmail.com.
 
-export PS1="\[$(tput setaf 3)\]\h\$\[$(tput sgr0)\] "
+if [[ "$-" =~ .*i.* ]]
+then export PS1="\[$(tput setaf 3)\]\h\$\[$(tput sgr0)\] "
+fi
 
 export GIT_EDITOR=nano
 
