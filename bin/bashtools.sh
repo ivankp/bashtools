@@ -26,6 +26,7 @@ export GIT_EDITOR=nano
 
 export MSU=marinellis@hx10.pa.msu.edu:/work/raida/marinellis
 export UMD=samm@pa-pub.umd.edu:/data/scratch/userspace/samm
+export SVN=https://private.hawc-observatory.org/svn/hawc
 
 for command in grep egrep fgrep ls
 do alias "$command=$command --color=auto"
