@@ -175,3 +175,11 @@ function prepend {
     export "$var=$prefix${!var}"
 
 }
+
+function join_with {
+
+    local IFS="$1"
+    shift
+    echo "$*"
+
+}
