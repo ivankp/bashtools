@@ -64,8 +64,8 @@ function err {
 
 function backup {
 
-    src_dir="$1"
-    target_dir="$2"
+    local src_dir="$1"
+    local target_dir="$2"
 
     if [ ! -d "$target_dir" ]
     then
@@ -80,7 +80,7 @@ function backup {
 
 function cs {
 
-    dir="${1-$H2}"
+    local dir="${1-$H2}"
     if ! [ "$dir" ]
     then dir=~
     fi
@@ -101,16 +101,16 @@ function up {
 
 function op {
 
-    exe=(evince mirage ffplay libreoffice gedit)
-    extension=("pdf" "jpg|png" "mkv|wav" "docx|xlsx" ".*")
+    local exe=(evince mirage ffplay libreoffice gedit)
+    local extension=("pdf" "jpg|png" "mkv|wav" "docx|xlsx" ".*")
 
-    files=("$@")
+    local files=("$@")
 
     for ((i = 0; i < ${#exe[@]}; ++i))
     do
     
-        matched=()
-        unmatched=()
+        local matched=()
+        local unmatched=()
         
         for file in "${files[@]}"
         do
@@ -124,7 +124,7 @@ function op {
         then quiet ${exe[i]} "${matched[@]}"
         fi
         
-        files=("${unmatched[@]}")
+        local files=("${unmatched[@]}")
     
     done
 
@@ -132,13 +132,13 @@ function op {
 
 function li {
 
-    name="$1"
+    local name="$1"
 
     for tuple in "marinellis hx10    .pa.msu.edu"         \
                  "samm       pa-pub  .umd.edu"            \
                  "samm       sequoia .private.pa.umd.edu"
     do
-        arr=($tuple)
+        local arr=($tuple)
         if [ "$name" == ${arr[1]} ]
         then
             ssh -Y ${arr[0]}@${arr[1]}${arr[2]}
@@ -167,10 +167,10 @@ function pdf {
 
 function prepend {
 
-    var="$1"
+    local var="$1"
     shift
     
-    prefix=
+    local prefix=
     for file in "$@"
     do prefix+="$file:"
     done
