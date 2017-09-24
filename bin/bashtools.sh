@@ -58,6 +58,8 @@ alias "deepin-screenshot=deepin-screenshot -d 2 -f -s"
 
 alias "untar=tar -xvf"
 
+alias "valgrind=valgrind --leak-check=yes"
+
 function err {
     echo "$@" 1>&2
 }
