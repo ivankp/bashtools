@@ -52,7 +52,7 @@ alias "make=make -j$(fgrep processor /proc/cpuinfo | wc -l)"
 
 alias "root=root -l"
 
-alias "i3lock=i3lock -c 000000"
+alias "i3lock=quiet i3lock -c 000000"
 
 alias "deepin-screenshot=deepin-screenshot -d 2 -f -s"
 
